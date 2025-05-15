@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="../Css/cart.css" />
+    <script src="../js/cart.js" defer></script>
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+    <button class="toggle-btn" id="sidebarToggle">☰</button>
+
+    <div class="sidebar" id="sidebar">
+      <a href="/index.html">Home</a>
+      <a href="/pages/Setting.html">Settings</a>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="payment-container">
+        <div class="payment-header">
+          <h1>CART🛒</h1>
+          <p>Complete your purchase by providing your payment details</p>
+        </div>
+
+        <div class="payment-grid">
+          <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="order-items" id="orderItems">
+              <!-- Order items will be dynamically inserted here -->
+            </div>
+            <div class="order-total">
+              <span>Total:</span>
+              <span id="orderTotal">$0.00</span>
+            </div>
+          </div>
+
+          <div class="payment-form">
+            <h2>Payment Details</h2>
+            <form id="paymentForm">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input
+                  type="text"
+                  id="fullName"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label for="address">Shipping Address</label>
+                <input type="text" id="address" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" id="country" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input
+                  type="text"
+                  id="cardNumber"
+                  class="form-control"
+                  placeholder="1234 5678 9012 3456"
+                  required
+                />
+              </div>
+
+              <div class="form-group card-row">
+                <div>
+                  <label for="cardName">Name on Card</label>
+                  <input
+                    type="text"
+                    id="cardName"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="expDate">Exp Date</label>
+                  <input
+                    type="text"
+                    pattern="(0[1-9]|1[0-2])\/[0-9]{2}"
+                    placeholder="MM/YY"
+                    maxlength="5"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/^([0-9]{2})/, '$1/')"
+                  />
+                </div>
+                <div>
+                  <label for="cvv">CVV</label>
+                  <input
+                    type="password"
+                    pattern="[0-9]{3}"
+                    placeholder="CVV"
+                    maxlength="3"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                  />
+                </div>
+              </div>
+
+              <button type="submit" class="submit-btn">Confirm Order</button>
+            </form>
+
+            <a href="../pages/Products.html" class="return-link"
+              >Return to Products page</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

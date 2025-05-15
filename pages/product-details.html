@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../js/cart.js" defer></script>
+    <script src="../js/product_detils.js" defer></script>
+  </head>
+  <body>
+    <!-- NavBar Dynamic -->
+    <div id="navbar-container"></div>
+
+    <div class="content-wrapper">
+      <div class="container product-detail-container">
+        <div class="product-detail-card shadow">
+          <div class="product-detail-image-container">
+            <img
+              id="productImage"
+              src=""
+              alt="Product Image"
+              class="product-detail-image"
+            />
+          </div>
+          <div class="product-detail-content">
+            <h1 id="productName" class="product-detail-title"></h1>
+            <div class="product-specifications" id="productSpecs"></div>
+            <p id="productDesc" class="product-detail-description"></p>
+            <p id="productPrice" class="product-detail-price"></p>
+            <div class="product-action-buttons">
+              <button class="order-btn product-detail-btn">Add to Cart</button>
+             
+              <button
+                class="go_home"
+                onclick="window.location.href='../pages/Products.html'"
+              >
+                page 1
+              </button>
+              <button
+                class="go_home"
+                onclick="window.location.href='../pages/pro2.html'"
+              >
+                page 2
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Load NavBar dynamically
+      fetch("../NavBar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("navbar-container").innerHTML = data;
+        })
+        .catch((error) => console.error("Error fetching navbar:", error));
+    </script>
+  </body>
+</html>

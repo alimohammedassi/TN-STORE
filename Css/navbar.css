@@ -1,0 +1,118 @@
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 0.6rem 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.6px;
+}
+
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #ffd700; /* Gold accent */
+  transition: width 0.3s ease, background 0.3s ease;
+  transform-origin: left;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a:hover::before {
+  width: 100%;
+  background: linear-gradient(90deg, #ffd700, #ffa500); /* Gradient accent */
+}
+
+.nav-links a.active {
+  color: #ffd700;
+}
+
+.nav-links a.active::before {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ffd700, #ffa500);
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-buttons .login,
+.nav-buttons .sign-up {
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px; /* Pill-shaped buttons */
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-buttons .login {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.nav-buttons .login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.nav-buttons .login:hover {
+  border-color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.nav-buttons .login:hover::before {
+  left: 0;
+}
+
+.nav-buttons .sign-up {
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  color: #8b1218;
+  border: none;
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
+}
+
+.nav-buttons .sign-up:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 165, 0, 0.4);
+  background: linear-gradient(135deg, #ffa500, #ffd700);
+}
+.cut p {
+  margin: 0;
+  padding: 0;
+}
+
+.cut strong {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+  font-weight: 300;
+  display: inline-block;
+  letter-spacing: -2px;
+}

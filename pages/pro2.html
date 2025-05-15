@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Products</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/utility.js" defer></script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebarToggle = document.getElementById("sidebarToggle");
+        const sidebar = document.getElementById("sidebar");
+        const contentWrapper = document.querySelector(".content-wrapper");
+        const navbar = document.querySelector("nav");
+
+        sidebarToggle.addEventListener("click", function () {
+          sidebar.classList.toggle("active");
+        });
+
+        fetch("/NavBar.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("navbar-container").innerHTML = data;
+          });
+
+        const filterSelect = document.getElementById("categoryFilter");
+        const cards = document.querySelectorAll(".card-link");
+
+        filterSelect.addEventListener("change", function () {
+          const selected = this.value;
+          cards.forEach((card) => {
+            const category = card.dataset.category;
+            card.style.display =
+              selected === "all" || category === selected ? "block" : "none";
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button class="toggle-btn" id="sidebarToggle">☰</button>
+    <div class="sidebar" id="sidebar">
+      <a href="/index.html">Home</a>
+      <a href="/pages/Setting.html">Settings</a>
+      <a href="/pages/Contect.html">Connect with us</a>
+    </div>
+
+    <div class="content-wrapper">
+      <header>
+        <div id="navbar-container"></div>
+      </header>
+
+      <main>
+        <div class="container">
+          <h1 class="page-title">Featured Tech Products</h1>
+
+          <div class="filter-bar">
+            <label for="categoryFilter">Filter by Category:</label>
+            <select id="categoryFilter">
+              <option value="all">All</option>
+              <option value="laptop">Laptop</option>
+              <option value="camera">Camera</option>
+              <option value="watch">Watch</option>
+              <option value="headphone">Headphones</option>
+            </select>
+          </div>
+
+          <div class="products-grid">
+            <!-- Product 1 -->
+            <a
+              href="product-details.html?id=1"
+              class="card-link"
+              data-category="laptop"
+            >
+              <div class="card shadow">
+                <div class="product-image-container">
+                  <img
+                    src="../images/laptop.jpg"
+                    alt="Gaming Laptop"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>GAMER XRT 500</h2>
+                  <p class="specs">16GB RAM • 1TB SSD • RTX 4060</p>
+                  <p class="price">$1,299</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Product 2 -->
+            <a
+              href="product-details.html?id=2"
+              class="card-link"
+              data-category="camera"
+            >
+              <div class="card shadow">
+                <div class="product-image-container">
+                  <img
+                    src="../images/camara pic.jpg"
+                    alt="SONY Camera"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>SONY Alpha A7 III</h2>
+                  <p class="specs">24.2MP • 4K Video • 10fps</p>
+                  <p class="price">$1,999</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Product 3 -->
+            <a
+              href="product-details.html?id=3"
+              class="card-link"
+              data-category="watch"
+            >
+              <div class="card shadow">
+                <div class="product-image-container">
+                  <img
+                    src="../images/watch.jpg"
+                    alt="Smartwatch"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Smart Watch X2</h2>
+                  <p class="specs">Heart Rate • GPS • 5 ATM</p>
+                  <p class="price">$299</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Product 4 -->
+            <a
+              href="product-details.html?id=4"
+              class="card-link"
+              data-category="laptop"
+            >
+              <div class="card shadow">
+                <div class="product-image-container">
+                  <img
+                    src="../Images/Honor MagicBook Art 14_ World’s First 4320Hz PWM Dimming OLED Laptop Launched Globally Ajleeblog.jpeg"
+                    alt="Honor MagicBook Art 14"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Honor MagicBook Art 14</h2>
+                  <p class="specs">16GB RAM • 1TB SSD • OLED Display</p>
+                  <p class="price">50,000 L.E</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Product 5 -->
+            <a
+              href="product-details.html?id=5"
+              class="card-link"
+              data-category="laptop"
+            >
+              <div class="card shadow">
+                <div class="product-image-container">
+                  <img
+                    src="../images/HP Victus 16-r0076TX Gaming Laptop Launched in India ( Specs_ Core i5-13500HX _ RTX 4050 _ 16GB ram _ 512GB SSD _ 144hz display ) _ Tech Stories India _ Technology News Online.jpeg"
+                    alt="HP Victus Gaming Laptop"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>HP Victus 16-r0076TX</h2>
+                  <p class="specs">Core i5-13500HX • RTX 4050 • 16GB RAM</p>
+                  <p class="price">$1,199</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Product 6 -->
+            <a
+              href="product-details.html?id=6"
+              class="card-link"
+              data-category="watch"
+            >
+              <div class="card shadow">
+                <div class="product-image-container">
+                  <img
+                    src="../images/I used Apple Fitness Plus for 7 days_ Here's my honest review.jpeg"
+                    alt="Apple Fitness Plus"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Apple Fitness Plus</h2>
+                  <p class="specs">Subscription • All Apple Devices</p>
+                  <p class="price">10,000 L.E</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Product 7 -->
+            <a
+              href="product-details.html?id=7"
+              class="card-link"
+              data-category="headphone"
+            >
+              <div class="card shadow">
+                <div class="product-image-container">
+                  <img
+                    src="../images/JBL Headphones - Firat Tuzunkan on Fstoppers.jpeg"
+                    alt="JBL Headphones"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>JBL Quantum 800</h2>
+                  <p class="specs">Wireless • Active Noise Cancellation</p>
+                  <p class="price">$199</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Product 8 -->
+            <a
+              href="product-details.html?id=8"
+              class="card-link"
+              data-category="laptop"
+            >
+              <div class="card shadow">
+                <div class="product-image-container">
+                  <img
+                    src="../images/MacBook Pro 16-inch Space Gray Mockup.jpeg"
+                    alt="MacBook Pro"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>MacBook Pro 16-inch</h2>
+                  <p class="specs">M3 Pro • 32GB RAM • 1TB SSD</p>
+                  <p class="price">$2,499</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Product 9 -->
+            <a
+              href="product-details.html?id=9"
+              class="card-link"
+              data-category="headphone"
+            >
+              <div class="card shadow">
+                <div class="product-image-container">
+                  <img
+                    src="../images/SONY 1000X M3 - Promotional Advertisement - Janith Lekamwasam.jpeg"
+                    alt="SONY 1000X M3"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>SONY 1000X M3</h2>
+                  <p class="specs">Noise Cancellation • 30h Battery</p>
+                  <p class="price">$249</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Product 10 -->
+            <a
+              href="product-details.html?id=10"
+              class="card-link"
+              data-category="tablet"
+            >
+              <div class="card shadow">
+                <div class="product-image-container">
+                  <img
+                    src="../images/These Are the Best Deals on Tech Products During the Spring Sale Season.jpeg"
+                    alt="iPad Pro"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>iPad Pro 12.9"</h2>
+                  <p class="specs">M2 Chip • 256GB • Liquid Retina XDR</p>
+                  <p class="price">$1,099</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <button
+            class="go_home"
+            onclick="window.location.href='../index.html'"
+          >
+            Go home
+          </button>
+          <button
+            class="1 go_home"
+            onclick="window.location.href='../pages/Products.html'"
+          >
+            1
+          </button>
+        </div>
+      </main>
+
+      <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Use Cases</h3>
+            <a href="#">Gaming Laptops</a>
+            <a href="#">Business Laptops</a>
+            <a href="#">Workstations</a>
+            <a href="#">Budget-Friendly Laptops</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

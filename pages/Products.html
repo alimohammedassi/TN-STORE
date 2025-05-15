@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Products</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+
+    <script src="../js/product_detils.js" defer="defer"></script>
+    <script src="../js/cart.js" defer="defer"></script>
+    <script defer="defer">
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebarToggle = document.getElementById("sidebarToggle");
+        const sidebar = document.getElementById("sidebar");
+        const contentWrapper = document.querySelector(".content-wrapper");
+        const navbar = document.querySelector("nav");
+
+        sidebarToggle.addEventListener("click", function () {
+          sidebar.classList.toggle("active");
+        });
+
+        fetch("/NavBar.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("navbar-container").innerHTML = data;
+          });
+
+        const filterSelect = document.getElementById("categoryFilter");
+        const cards = document.querySelectorAll(".card");
+
+        filterSelect.addEventListener("change", function () {
+          const selected = this.value;
+          cards.forEach((card) => {
+            const category = card.dataset.category;
+            card.style.display =
+              selected === "all" || category === selected ? "block" : "none";
+          });
+        });
+
+        // Initialize the shopping cart
+        const cart = new ShoppingCart();
+
+        // Add event listeners to all "Add to Cart" buttons
+        document.querySelectorAll(".add-to-cart-btn").forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+            const productId = this.dataset.productId;
+
+            // Get the product data from product_detils.js
+            const productData = getProductById(parseInt(productId));
+
+            if (productData) {
+              cart.addItem(productData);
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button class="toggle-btn" id="sidebarToggle">☰</button>
+    <div class="sidebar" id="sidebar">
+      <a href="/index.html">Home</a>
+      <a href="/pages/Setting.html">Settings</a>
+      <a href="/pages/Contect.html">Connect with us</a>
+      <a href="/pages/cart.html">cart</a>
+    </div>
+
+    <div class="content-wrapper">
+      <header>
+        <div id="navbar-container"></div>
+      </header>
+
+      <main>
+        <div class="container">
+          <h1 class="page-title">Featured Tech Products</h1>
+
+          <div class="filter-bar">
+            <label for="categoryFilter">Filter by Category:</label>
+            <select id="categoryFilter">
+              <option value="all">All</option>
+              <option value="laptop">Laptop</option>
+              <option value="camera">Camera</option>
+              <option value="watch">Watch</option>
+              <option value="headphone">Headphones</option>
+              <option value="monitor">Monitors</option>
+              <option value="tablet">Tablets</option>
+              <option value="vr">VR</option>
+              <option value="tv">TVs</option>
+              <option value="drone">Drones</option>
+              <option value="accessory">Accessories</option>
+              <option value="gaming">Gaming</option>
+              <option value="phone">Phones</option>
+              <option value="smart">Smart Home</option>
+            </select>
+          </div>
+
+          <div class="products-grid">
+            <!-- Product 11 -->
+            <div class="card shadow" data-category="monitor">
+              <a href="product-details.html?id=11" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/Samsung Odyssey Neo G9.jpg"
+                    alt="Samsung Odyssey Neo G9"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2 class="product-name">Samsung Odyssey Neo G9</h2>
+                  <p class="specs">57" • Mini-LED • 240Hz • 1000R Curved</p>
+                  <p class="price">$2,499.99</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="11">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 12 -->
+            <div class="card shadow" data-category="laptop">
+              <a href="product-details.html?id=12" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/HP Spectre x360 14.jpg"
+                    alt="HP Spectre x360 14"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>HP Spectre x360 14</h2>
+                  <p class="specs">13.5" OLED • Core i7 • 16GB RAM • 1TB SSD</p>
+                  <p class="price">$1,549.99</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="12">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 13 -->
+            <div class="card shadow" data-category="tablet">
+              <a href="product-details.html?id=13" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/Microsoft Surface Pro 9.jpg"
+                    alt="Microsoft Surface Pro 9"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Microsoft Surface Pro 9</h2>
+                  <p class="specs">13" • Core i7 • 16GB RAM • 256GB SSD</p>
+                  <p class="price">$1,299.99</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="13">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 14 -->
+            <div class="card shadow" data-category="vr">
+              <a href="product-details.html?id=14" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/Meta Quest 3.jpg"
+                    alt="Meta Quest 3"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Meta Quest 3</h2>
+                  <p class="specs">128GB • Snapdragon XR2 • Mixed Reality</p>
+                  <p class="price">$499.99</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="14">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 15 -->
+            <div class="card shadow" data-category="headphone">
+              <a href="product-details.html?id=15" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/Apple AirPods Max.jpg"
+                    alt="Apple AirPods Max"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Apple AirPods Max</h2>
+                  <p class="specs">Active Noise Cancellation • Spatial Audio</p>
+                  <p class="price">$549.00</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="15">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 16 -->
+            <div class="card shadow" data-category="tv">
+              <a href="product-details.html?id=16" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/LG OLED C2 Series.jpg"
+                    alt="LG OLED C2 Series"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>LG OLED C2 Series</h2>
+                  <p class="specs">65" • 4K • 120Hz • AI Processor 4K</p>
+                  <p class="price">$1,796.99</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="16">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 17 -->
+            <div class="card shadow" data-category="drone">
+              <a href="product-details.html?id=17" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/DJI Mavic 3 Pro.jpg"
+                    alt="DJI Mavic 3 Pro"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>DJI Mavic 3 Pro</h2>
+                  <p class="specs">4/3 CMOS Hasselblad Camera • 43min Flight</p>
+                  <p class="price">$2,199.00</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="17">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 18 -->
+            <div class="card shadow" data-category="monitor">
+              <a href="product-details.html?id=18" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/ASUS ROG Swift PG32UQX.jpg"
+                    alt="ASUS ROG Swift PG32UQX"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>ASUS ROG Swift PG32UQX</h2>
+                  <p class="specs">
+                    32" 4K • 144Hz • Mini-LED • G-Sync Ultimate
+                  </p>
+                  <p class="price">$2,999.99</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="18">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 19 -->
+            <div class="card shadow" data-category="accessory">
+              <a href="product-details.html?id=19" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/Anker 737 Power Bank.jpg"
+                    alt="Anker 737 Power Bank"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Anker 737 Power Bank</h2>
+                  <p class="specs">24,000mAh • 140W Output • GaNPrime</p>
+                  <p class="price">$179.99</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="19">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 20 -->
+            <div class="card shadow" data-category="gaming">
+              <a href="product-details.html?id=20" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/netro.jpg "
+                    alt="Nintendo Switch OLED"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Nintendo Switch OLED</h2>
+                  <p class="specs">7" OLED Screen • 64GB Storage • White</p>
+                  <p class="price">$349.99</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="20">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 21 -->
+            <div class="card shadow" data-category="accessory">
+              <a href="product-details.html?id=21" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/Logitech MX Master 3S.jpg"
+                    alt="Logitech MX Master 3S"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Logitech MX Master 3S</h2>
+                  <p class="specs">
+                    Wireless • 8K DPI • Silent Clicks • Multi-Device
+                  </p>
+                  <p class="price">$99.99</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="21">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 22 -->
+            <div class="card shadow" data-category="headphone">
+              <a href="product-details.html?id=22" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/Sony WH-1000XM5.jpg"
+                    alt="Sony WH-1000XM5"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Sony WH-1000XM5</h2>
+                  <p class="specs">
+                    Noise Cancelling • 30h Battery • Hi-Res Audio
+                  </p>
+                  <p class="price">$399.99</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="22">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 24 -->
+            <div class="card shadow" data-category="phone">
+              <a href="product-details.html?id=24" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/Samsung Galaxy S23 Ultra.jpg"
+                    alt="Samsung Galaxy S23 Ultra"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Samsung Galaxy S23 Ultra</h2>
+                  <p class="specs">256GB • 12GB RAM • 200MP Camera • S Pen</p>
+                  <p class="price">$1,199.99</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="24">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 25 -->
+            <div class="card shadow" data-category="smart">
+              <a href="product-details.html?id=25" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/Amazon Echo Studio.jpg"
+                    alt="Amazon Echo Studio"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Amazon Echo Studio</h2>
+                  <p class="specs">High-fidelity • 3D Audio • Alexa</p>
+                  <p class="price">$199.99</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="25">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 26 -->
+            <div class="card shadow" data-category="laptop">
+              <a href="product-details.html?id=26" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/Razer Blade 15.jpg"
+                    alt="Razer Blade 15"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Razer Blade 15</h2>
+                  <p class="specs">RTX 4070 • i7-13800H • 16GB RAM • 1TB SSD</p>
+                  <p class="price">$2,699.99</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="26">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 27 -->
+            <div class="card shadow" data-category="headphone">
+              <a href="product-details.html?id=27" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/Bose QuietComfort 45.jpg"
+                    alt="Bose QuietComfort 45"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Bose QuietComfort 45</h2>
+                  <p class="specs">Noise Cancelling • Wireless • 24h Battery</p>
+                  <p class="price">$329.00</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="27">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 28 -->
+            <div class="card shadow" data-category="watch">
+              <a href="product-details.html?id=28" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/Garmin Fenix 7X.jpg"
+                    alt="Garmin Fenix 7X"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Garmin Fenix 7X</h2>
+                  <p class="specs">
+                    GPS • Heart Rate • Multi-Sport • Smartwatch
+                  </p>
+                  <p class="price">$899.99</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="28">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 29 -->
+            <div class="card shadow" data-category="phone">
+              <a href="product-details.html?id=29" class="card-link">
+                <div class="product-image-container">
+                  <img
+                    src="../images/Google Pixel 7 Pro.jpg"
+                    alt="Google Pixel 7 Pro"
+                    class="product-image"
+                  />
+                </div>
+                <div class="card-content">
+                  <h2>Google Pixel 7 Pro</h2>
+                  <p class="specs">
+                    128GB • 12GB RAM • Android 13 • Triple Camera
+                  </p>
+                  <p class="price">$749.00</p>
+                </div>
+              </a>
+              <div class="product-action-buttons">
+                <button class="order-btn add-to-cart-btn" data-product-id="29">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+
+          <button
+            class="go_home"
+            onclick="window.location.href='../index.html'"
+          >
+            Go home
+          </button>
+          <button
+            class="2 go_home"
+            onclick="window.location.href='../pages/pro2.html'"
+          >
+            2
+          </button>
+        </div>
+      </main>
+
+      <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Use Cases</h3>
+            <a href="#">Gaming Laptops</a>
+            <a href="#">Business Laptops</a>
+            <a href="#">Workstations</a>
+            <a href="#">Budget-Friendly Laptops</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  
+    <meta charset="UTF-8" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <title>Page Title</title>
+
+  
+    <link rel="stylesheet" href="/style.css" />
+
+    
+    <script src="../js/utility.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+ 
+    <button class="toggle-btn" id="sidebarToggle">☰</button>
+
+     <div class="sidebar" id="sidebar">
+     
+    </div>
+    
+    <div class="content-wrapper">
+      <header>
+      
+        <div id="navbar-container"></div>
+      </header>
+
+      <main>
+      
+        <div class="about-us-container">
+          <h1>AboutUs</h1>
+          <p>
+            <h3>
+              "Our
+              website is dedicated to showcasing and discussing the latest tech
+              products. We provide in-depth reviews, insights, and updates on a wide
+              range of technological innovations, from software to hardware, aimed at
+              helping tech enthusiasts and professionals stay informed about the
+              products that shape the tech industry.            </h3>
+          </p>
+
+          <br>
+
+     
+          <h2> 👨‍💻Team members:</h2>
+
+          <div class="team">
+          
+            <div class="team-member">
+              <img src="/Images/ali_pic.jpg" alt="Team Member" />
+              <h3>Eng.ALi Mohmmed</h3>
+              <p>Front - end dev</p>
+            </div>
+
+            
+            <div class="team-member">
+              <img src="/Images/mohammed 3333.jpg" alt="Team Member" />
+              <h3>Eng.Mohammed saead </h3>
+              <p>Back - end dev</p>
+            </div>
+
+            <!-- فرد من الفريق -->
+            <div class="team-member">
+              <img src="/Images/eziz.jpg" alt="Team Member" />
+              <h3>Eng.Ezeldin Khaled</h3>
+              <p>Back - end dev</p>
+            </div>
+
+            <!-- فرد من الفريق -->
+            <div class="team-member">
+              <img src="/Images/ali2.jpg" alt="Team Member" />
+              <h3>Eng.Aly mohamed ahmed ramzy</h3>
+              <p>Back - end dev</p>
+            </div>
+
+           
+            <div class="team-member">
+              <img src="/Images/name.jpg" alt="Team Member" />
+              <h3>Eng.Abdulrahman Samy</h3>
+              <p>Back - end dev</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+    
+      <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Use Cases</h3>
+            <a href="#">Gaming Laptops</a>
+            <a href="#">Business Laptops</a>
+            <a href="#">Workstations</a>
+            <a href="#">Budget-Friendly Laptops</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- سكريبت لتفعيل زر القائمة الجانبية -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebarToggle = document.getElementById("sidebarToggle");
+        const sidebar = document.getElementById("sidebar");
+        const contentWrapper = document.querySelector(".content-wrapper");
+        const navbar = document.querySelector("nav");
+
+        if (sidebarToggle && sidebar && contentWrapper) {
+          sidebarToggle.addEventListener("click", function () {
+            sidebar.classList.toggle("active");
+
+           
+          });
+        }
+      });
+    </script>s
+
+    <!-- تحميل النافبار من ملف خارجي -->
+    <script>
+      fetch('/NavBar.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('navbar-container').innerHTML = data;
+        });
+    </script>
+    
+  </body>
+</html>

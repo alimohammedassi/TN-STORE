@@ -1,0 +1,35 @@
+.about-us-container {
+  width: 80%;
+  margin: 60px auto;
+  background: white;
+  padding: 40px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.about-us-container:hover {
+  transform: translateY(-5px);
+}
+.team {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.team-member {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  width: 30%;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 30px rgba(0, 0, 0, 0.15);
+}

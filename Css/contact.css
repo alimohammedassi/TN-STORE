@@ -1,0 +1,234 @@
+.container1 {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-info:hover {
+  transform: translateY(-5px);
+}
+.info-item {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+}
+.info-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(163, 22, 33, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  color: #a31621;
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover .info-icon {
+  background-color: #a31621;
+  color: white;
+  transform: scale(1.1);
+}
+.info-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #8b1218;
+  font-weight: 600;
+}
+
+.info-details p {
+  color: #5a6c7d;
+  line-height: 1.5;
+}
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-form:hover {
+  transform: translateY(-5px);
+}
+
+.contact-form h2 {
+  color: #a31621;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f1f1f1;
+  font-weight: 700;
+}
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 18px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  display: none;
+  border-left: 4px solid #155724;
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.error-message {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  display: none;
+}
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #8b1218;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+.go_home {
+  background: #8b1218;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+  margin-top: 10%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.go_home:hover {
+  background-color: #5e0700;
+}
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  margin-bottom: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #a31621, #8b1218);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(163, 22, 33, 0.3);
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) rotate(10deg);
+  background: linear-gradient(135deg, #bf1b2c, #a31621);
+  box-shadow: 0 7px 15px rgba(163, 22, 33, 0.4);
+}
+.error-message {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  display: none;
+}
+footer {
+  background: #8b1218;
+  padding: 5rem 2rem;
+  margin-top: 5rem;
+  transition: margin-left 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  color: white;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-section h3:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: #fcf7f8;
+}
+
+.footer-section a {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  margin-bottom: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: white;
+  transform: translateX(5px);
+}

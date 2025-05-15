@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>TN-store</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="/js/utility.js" defer></script>
+
+    <script src="script.js" defer></script>
+    <style>
+      /* * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Rajdhani", sans-serif;
+      }
+
+      body {
+        background-color: #f4f4f4;
+        color: #333;
+        padding: 0;
+        margin: 0;
+      }
+
+      /* Navbar */
+      nav {
+        background-color: #1e1e2f;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      nav .nav-links a,
+      nav .nav-buttons a {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      nav .nav-buttons {
+        display: flex;
+        align-items: center;
+      }
+
+      nav .cart-icon-container img {
+        width: 24px;
+        height: 24px;
+        margin-left: 15px;
+        filter: invert(1);
+      } */
+
+      /* Slider container */
+      .slider-container {
+        overflow: hidden;
+        width: 100%;
+        padding: 40px 0;
+        box-sizing: border-box;
+      }
+
+      .slider-track {
+        display: flex;
+        width: max-content;
+        animation: scroll-cards 50s linear infinite;
+      }
+
+      .slider-track .card {
+        flex: 0 0 auto;
+        width: 250px;
+        background: white;
+        margin-right: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .slider-track .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .slider-track .card h2 {
+        padding: 15px;
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .slider-track .card:hover {
+        transform: scale(1.05);
+      }
+
+      @keyframes scroll-cards {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="toggle-btn" id="sidebarToggle">☰</button>
+
+     <div class="sidebar" id="sidebar">
+     
+    </div>
+
+    <div class="content-wrapper">
+      <header>
+        <div id="navbar-container"></div>
+      </header>
+
+      <main>
+        <section class="hero hero-with-bg">
+          <h1 class="fade-in">WELCOME TO TN-STORE</h1>
+
+          <p class="subtitle">
+            OUR WEBSITE IS A PLACE WHERE YOU CAN FIND THE BEST TECH PRODUCTS AND
+            SERVICES.
+          </p>
+        </section>
+
+        <div class="container">
+          <h1 class="page-title">Featured Tech Products</h1>
+
+          <div class="slider-container">
+            <div class="slider-track">
+              <!-- cards start -->
+              <div class="slider-container">
+                <div class="slider-track">
+                  <!-- Cards (first loop) -->
+                  <div class="card">
+                    <img src="Images/laptop.jpg" alt="Laptop" />
+                    <h2>GAMER XRT 500</h2>
+                  </div>
+                  <div class="card">
+                    <img src="Images/watch.jpg" alt="Watch" />
+                    <h2>Smart Watch X2</h2>
+                  </div>
+                  <div class="card">
+                    <img src="Images/camara pic.jpg" alt="Camera" />
+                    <h2>SONY Camera</h2>
+                  </div>
+                  <div class="card">
+                    <img src="Images/JBL Headphones - Firat Tuzunkan on Fstoppers.jpeg" alt="JBL" />
+                    <h2>JBL Headphones</h2>
+                  </div>
+                  <div class="card">
+                    <img src="Images/SONY 1000X M3 - Promotional Advertisement - Janith Lekamwasam.jpeg" alt="Sony" />
+                    <h2>SONY 1000X M3</h2>
+                  </div>
+                  <div class="card">
+                    <img src="Images/Honor MagicBook Art 14_ World’s First 4320Hz PWM Dimming OLED Laptop Launched Globally Ajleeblog.jpeg" alt="Honor" />
+                    <h2>Honor MagicBook</h2>
+                  </div>
+          
+                  <!-- Cards (repeated for animation) -->
+                  <div class="card">
+                    <img src="Images/laptop.jpg" alt="Laptop" />
+                    <h2>GAMER XRT 500</h2>
+                  </div>
+                  <div class="card">
+                    <img src="Images/watch.jpg" alt="Watch" />
+                    <h2>Smart Watch X2</h2>
+                  </div>
+                  <div class="card">
+                    <img src="Images/camara pic.jpg" alt="Camera" />
+                    <h2>SONY Camera</h2>
+                  </div>
+                  <div class="card">
+                    <img src="Images/JBL Headphones - Firat Tuzunkan on Fstoppers.jpeg" alt="JBL" />
+                    <h2>JBL Headphones</h2>
+                  </div>
+                  <div class="card">
+                    <img src="Images/SONY 1000X M3 - Promotional Advertisement - Janith Lekamwasam.jpeg" alt="Sony" />
+                    <h2>SONY 1000X M3</h2>
+                  </div>
+                  <div class="card">
+                    <img src="Images/Honor MagicBook Art 14_ World’s First 4320Hz PWM Dimming OLED Laptop Launched Globally Ajleeblog.jpeg" alt="Honor" />
+                    <h2>Honor MagicBook</h2>
+                  </div>
+                </div>
+              </div>
+            
+      </main>
+
+      
+    </div>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Use Cases</h3>
+
+          <a href="#">Gaming Laptops</a>
+          <a href="#">Business Laptops</a>
+          <a href="#">Workstations</a>
+          <a href="#">Budget-Friendly Laptops</a>
+        </div>
+      </div>
+    </footer>
+    <nav>
+      <div id="navbar-container"></div>
+    </nav>
+
+    
+   
+
+    <script>
+      fetch("/NavBar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("navbar-container").innerHTML = data;
+        })
+        .catch((error) => console.error("Error fetching navbar:", error)); // لو حصل خطأ نعرضه
+    </script>
+  </body>
+</html>

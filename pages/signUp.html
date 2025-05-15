@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Title</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/utility.js" defer></script>
+    <!-- Include other page-specific scripts here -->
+  </head>
+  <body>
+    <button class="toggle-btn" id="sidebarToggle">☰ </button>
+
+    <div class="sidebar" id="sidebar">
+      <a href="/index.html">Home</a>
+      <a href="/pages/Setting.html">Settings</a>
+     
+      <!-- <a href="/pages/Dashboard.html">Dashboard</a> -->
+    </div>
+    
+    <div class="content-wrapper">
+      <header>
+        <div id="navbar-container"></div>
+      </header>
+
+      <main>
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2>Sign Up</h2>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupConfirmPassword">Confirm Password</label>
+                        <input type="password" id="signupConfirmPassword" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </div>
+        <script src="auth.js"></script>
+      </main>
+
+      <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Use Cases</h3>
+            <a href="#">Gaming Laptops</a>
+            <a href="#">Business Laptops</a>
+            <a href="#">Workstations</a>
+            <a href="#">Budget-Friendly Laptops</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <!-- Include the sidebar toggle functionality -->
+    <!-- بعد الفورم مباشرة -->
+    <script>
+      document.getElementById('signupForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        const name = document.getElementById('signupName').value.trim();
+        const email = document.getElementById('signupEmail').value.trim();
+        const password = document.getElementById('signupPassword').value;
+        const confirmPassword = document.getElementById('signupConfirmPassword').value;
+    
+        if (password !== confirmPassword) {
+          alert('Passwords do not match');
+          return;
+        }
+    
+        // Save data in localStorage
+        const user = {
+          name,
+          email,
+          password,
+          profileImage: '' // صورة افتراضية، هتتعدل بعدين
+        };
+        localStorage.setItem('user', JSON.stringify(user));
+    
+        // Redirect to home page
+        window.location.href = '/index.html';
+      });
+    </script>
+    
+
+    </script>
+    <script>
+        fetch('/NavBar.html')
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('navbar-container').innerHTML = data;
+          });
+      </script>
+      
+  </body>
+</html>

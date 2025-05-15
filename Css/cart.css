@@ -1,0 +1,211 @@
+.payment-container {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+
+      .payment-header {
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .payment-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      .order-summary {
+        padding: 1.5rem;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .order-items {
+        margin: 1rem 0;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+
+      .order-item {
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .order-item img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-right: 1rem;
+      }
+
+      .order-item-details {
+        flex: 1;
+      }
+
+      .order-total {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 2px solid #ddd;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .payment-form {
+        padding: 1.5rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .card-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 1rem;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .submit-btn:hover {
+        background-color: #45a049;
+      }
+
+      .return-link {
+        display: block;
+        text-align: center;
+        margin-top: 1rem;
+        color: #666;
+        text-decoration: none;
+      }
+
+      .return-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Added styles for the cart modal to ensure remove button works well */
+      .cart-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .cart-modal-content {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 600px;
+        max-height: 80vh;
+        overflow-y: auto;
+        position: relative;
+      }
+
+      .close-cart {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      .cart-items-container {
+        margin: 1rem 0;
+      }
+
+      .cart-item {
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+        position: relative;
+      }
+
+      .cart-item img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-right: 1rem;
+      }
+
+      .cart-item-details {
+        flex: 1;
+      }
+
+      .quantity-controls {
+        display: flex;
+        align-items: center;
+        margin-top: 0.5rem;
+      }
+
+      .quantity-btn {
+        background-color: #f0f0f0;
+        border: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .remove-item {
+        background-color: #7c0a02;
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        margin: 1rem 0.5rem;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        .payment-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+     

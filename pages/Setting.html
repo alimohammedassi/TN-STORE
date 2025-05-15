@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="../js/utility.js" defer></script>
+    <script src="../js/setting.js"></script>
+
+    <style>
+      /* ✅ Toast Style */
+      .toast {
+        visibility: hidden;
+        min-width: 250px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 8px;
+        padding: 1rem;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        font-family: sans-serif;
+      }
+
+      .toast.show {
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="toggle-btn" id="sidebarToggle">☰</button>
+
+    <div class="sidebar" id="sidebar">
+      <a href="/index.html">Home</a>
+      <a href="/pages/Setting.html">Settings</a>
+    </div>
+
+    <div class="content-wrapper">
+      <header>
+        <div id="navbar-container"></div>
+      </header>
+
+      <main>
+        <div class="settings-container">
+          <div class="settings-header">
+            <h1>Settings</h1>
+            <div class="theme-toggle"></div>
+          </div>
+
+          <div class="settings-card">
+            <h2 class="settings-title">Account Information</h2>
+            <div class="settings-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" placeholder="johndoe123" />
+            </div>
+            <div class="settings-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="john.doe@example.com"
+              />
+            </div>
+            <div class="settings-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="••••••••••" />
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <h2 class="settings-title">Notification Preferences</h2>
+            <div class="switch-group">
+              <div>
+                <div class="switch-title">
+                  <span class="icon-muted">📱</span>Push Notifications
+                </div>
+                <div class="switch-description">
+                  Receive notifications on your device
+                </div>
+              </div>
+              <label class="theme-switch">
+                <input type="checkbox" checked />
+                <span class="theme-slider"></span>
+              </label>
+            </div>
+
+            <div class="switch-group">
+              <div>
+                <div class="switch-title">
+                  <span class="icon-muted">📧</span>Email Notifications
+                </div>
+                <div class="switch-description">Receive updates via email</div>
+              </div>
+              <label class="theme-switch">
+                <input type="checkbox" checked />
+                <span class="theme-slider"></span>
+              </label>
+            </div>
+
+            <div class="switch-group">
+              <div>
+                <div class="switch-title">
+                  <span class="icon-muted">🔔</span>Marketing Communications
+                </div>
+                <div class="switch-description">
+                  Receive promotions and news
+                </div>
+              </div>
+              <label class="theme-switch">
+                <input type="checkbox" />
+                <span class="theme-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="settings-save">
+            <button class="settings-btn" id="saveButton">Save Changes</button>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Use Cases</h3>
+            <a href="#">Gaming Laptops</a>
+            <a href="#">Business Laptops</a>
+            <a href="#">Workstations</a>
+            <a href="#">Budget-Friendly Laptops</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ✅ Toast Element -->
+    <div id="toast" class="toast">✅ Settings saved successfully!</div>
+
+    <script>
+      document
+        .getElementById("saveButton")
+        .addEventListener("click", function () {
+          const toast = document.getElementById("toast");
+          toast.classList.add("show");
+
+          setTimeout(() => {
+            toast.classList.remove("show");
+            window.location.href = "/index.html";
+          }, 2000); // 2 ثواني وبعدها يروح للهوم
+        });
+    </script>
+  </body>
+</html>
