@@ -1,35 +1,35 @@
 :root {
-  --primary-color: #A31621;
-  --secondary-color: #8B1218;
+  --primary-color: #a31621;
+  --secondary-color: #8b1218;
   --danger-color: #e74c3c;
   --success-color: #2ecc71;
   --warning-color: #f39c12;
   --info-dark: #5a6c7d;
   --info-light: #dce1eb;
   --dark-color: #333;
-  --light-color: #FCF7F8;
+  --light-color: #fcf7f8;
   --white-color: #fff;
   --card-border-radius: 12px;
   --border-radius-1: 6px;
   --border-radius-2: 8px;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow: 12 10px 12px rgba(196, 23, 23, 0.651);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
 }
 
 body {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
-  background-color: #FCF7F8;
+  background-color: #e9e4e4;
   color: #333;
 }
-
 
 .container {
   display: grid;
@@ -81,11 +81,7 @@ small {
   overflow: hidden;
 }
 
-.profile-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+
 
 p {
   color: var(--info-dark);
@@ -95,9 +91,24 @@ p {
 aside {
   height: 100vh;
 }
+.go_home {
+  background: #8b1218;
+  color: white;
+  padding: 5% 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.go_home:hover {
+  background-color: #5e0700;
+}
 
 aside .top {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: space-between;
   margin-top: 1.4rem;
@@ -119,65 +130,6 @@ aside .logo h2 {
   font-weight: 800;
 }
 
-aside .sidebar {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  display: flex;
-  flex-direction: column;
-  height: 85vh;
-  position: relative;
-  top: 1.5rem;
-  border-radius: var(--card-border-radius);
-  box-shadow: var(--shadow);
-  color: white;
-}
-
-aside .sidebar a {
-  display: flex;
-  align-items: center;
-  color: white;
-  height: 3.7rem;
-  gap: 1rem;
-  position: relative;
-  margin-left: 2rem;
-  transition: all 300ms ease;
-  border-left: 4px solid transparent;
-}
-
-aside .sidebar a span {
-  font-size: 1.6rem;
-  transition: all 300ms ease;
-}
-
-aside .sidebar a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-left: 4px solid white;
-}
-
-aside .sidebar a:hover span {
-  margin-left: 1rem;
-}
-
-aside .sidebar a.active {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  margin-left: 0;
-  border-left: 4px solid white;
-}
-
-aside .sidebar a.active span {
-  color: white;
-  margin-left: calc(1rem - 3px);
-}
-
-aside .sidebar .message-count {
-  background: var(--white-color);
-  color: var(--primary-color);
-  padding: 2px 8px;
-  font-size: 11px;
-  border-radius: var(--border-radius-1);
-  font-weight: 700;
-}
-
 /* =============== MAIN ================ */
 main {
   margin-top: 1.4rem;
@@ -185,19 +137,14 @@ main {
 
 main .date {
   display: inline-block;
-  background: var(--white-color);
+  background: var(--info-light);
   border-radius: var(--border-radius-1);
   margin-top: 1rem;
   padding: 0.5rem 1.6rem;
   box-shadow: var(--shadow);
 }
 
-main .date input[type="date"] {
-  background: transparent;
-  color: var(--dark-color);
-  border: none;
-  font-family: 'Inter', sans-serif;
-}
+
 
 main .insights {
   display: grid;
@@ -206,7 +153,7 @@ main .insights {
 }
 
 main .insights > div {
-  background: var(--white-color);
+  background: var(--light-color);
   padding: 1.8rem;
   border-radius: var(--card-border-radius);
   margin-top: 1rem;
@@ -221,7 +168,11 @@ main .insights > div:hover {
 }
 
 main .insights > div .icon {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   padding: 0.6rem;
   border-radius: 50%;
   color: var(--white-color);
@@ -229,7 +180,7 @@ main .insights > div .icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(163, 22, 33, 0.3);
+  box-shadow: 0 4px 10px rgba(53, 50, 51, 0.3);
 }
 
 main .insights > div.expenses .icon {
@@ -245,6 +196,22 @@ main .insights > div .middle {
   align-items: center;
   justify-content: space-between;
 }
+@keyframes fadeInUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 5;
+  }
+}
+
+main .insights > div {
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0; 
+}
+
 
 main .insights h3 {
   margin: 1rem 0 0.6rem;
@@ -259,9 +226,9 @@ main .insights h1 {
 
 main .insights .progress {
   position: relative;
-  width: 92px;
+  width: 70px;
   height: 92px;
-  border-radius: 50%;
+  border-radius: 100%;
 }
 
 .progress svg {
@@ -284,12 +251,12 @@ main .insights .sales .progress svg circle {
 }
 
 main .insights .expenses .progress svg circle {
-  stroke: var(--danger-color);
+  stroke: var(--primary-color);
   stroke-dashoffset: 42;
 }
 
 main .insights .income .progress svg circle {
-  stroke: var(--success-color);
+  stroke: var(--primary-color);
   stroke-dashoffset: 60;
 }
 
@@ -299,7 +266,7 @@ main .insights .income .progress svg circle {
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 2rem;
   color: var(--dark-color);
 }
 
@@ -319,12 +286,12 @@ main .recent-orders table {
   padding: 1.8rem;
   text-align: center;
   box-shadow: var(--shadow);
-  transition: all 300ms ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 700ms ease;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 
 main .recent-orders table:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 40px 40px rgba(0, 0, 0, 0.15);
 }
 
 main table tbody td {
@@ -339,7 +306,7 @@ main table tbody tr:last-child td {
 
 main table th {
   height: 3.8rem;
-  color: var(--dark-color);
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
@@ -434,26 +401,6 @@ main .recent-orders a:hover {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.right .recent-updates .updates:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.right .recent-updates .updates .update {
-  display: grid;
-  grid-template-columns: 2.6rem auto;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.right .recent-updates .updates .message p {
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-}
-
-.right .recent-updates .updates .message p b {
-  color: var(--dark-color);
-}
-
 /* =============== SALES ANALYTICS ================ */
 .right .sales-analytics {
   margin-top: 2rem;
@@ -493,7 +440,11 @@ main .recent-orders a:hover {
   padding: 0.6rem;
   color: var(--white-color);
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -568,7 +519,7 @@ main .recent-orders a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color: var(--primary-color);
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
@@ -600,7 +551,7 @@ main .recent-orders a:hover {
   margin-bottom: 1.5rem;
   border: 1px solid #e1e5eb;
   border-radius: 8px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   transition: all 0.3s ease;
 }
 
@@ -612,21 +563,25 @@ main .recent-orders a:hover {
 }
 
 #addProductForm button {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   transition: all 0.3s ease;
   width: 100%;
   box-shadow: 0 4px 10px rgba(163, 22, 33, 0.3);
 }
 
 #addProductForm button:hover {
-  background: linear-gradient(135deg, #BF1B2C, var(--primary-color));
+  background: linear-gradient(135deg, #fcfafb, var(--primary-color));
   transform: translateY(-3px);
   box-shadow: 0 7px 15px rgba(163, 22, 33, 0.4);
 }
@@ -684,143 +639,90 @@ main .recent-orders a:hover {
   font-weight: 600;
 }
 
-/* Dark Mode Styles */
-body.dark-theme {
-  --light-color: #1a1c23;
-  --white-color: #252836;
-  --dark-color: #e4e6eb;
-  --info-dark: #b8c2cc;
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-body.dark-theme .sidebar {
-  background: linear-gradient(135deg, #6D0E13, #4a0a0e);
-}
-
-body.dark-theme aside .sidebar a:hover,
-body.dark-theme aside .sidebar a.active {
-  background: rgba(255, 255, 255, 0.05);
-}
-
 /* Responsive Design */
 @media (max-width: 1200px) {
   .container {
-      grid-template-columns: 7rem auto 23rem;
+    grid-template-columns: 7rem auto 23rem;
   }
 
   aside .sidebar h3 {
-      display: none;
+    display: none;
   }
 
   aside .sidebar a {
-      width: 5.6rem;
+    width: 5.6rem;
   }
 }
 
 @media (max-width: 992px) {
   .container {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
-  aside {
-      position: fixed;
-      left: -100%;
-      background: var(--white-color);
-      width: 18rem;
-      z-index: 3;
-      box-shadow: 1rem 3rem 4rem var(--shadow);
-      height: 100vh;
-      padding-right: var(--card-padding);
-      display: none;
-      animation: showMenu 400ms ease forwards;
-  }
 
-  @keyframes showMenu {
-      to {
-          left: 0;
-      }
-  }
-
-  aside .logo {
-      margin-left: 1rem;
-  }
-
-  aside .sidebar h3 {
-      display: inline;
-  }
-
-  aside .sidebar a {
-      width: 100%;
-      height: 3.4rem;
-  }
-
-  aside .close {
-      display: inline-block;
-      cursor: pointer;
-  }
 
   main {
-      margin-top: 8rem;
-      padding: 0 1rem;
+    margin-top: 8rem;
+    padding: 0 1rem;
   }
 
   .right {
-      width: 94%;
-      margin: 0 auto 4rem;
+    width: 94%;
+    margin: 0 auto 4rem;
   }
 
   .right .top {
-      position: fixed;
-      top: 0;
-      left: 0;
-      align-items: center;
-      padding: 0 0.8rem;
-      height: 4.6rem;
-      background: var(--white-color);
-      width: 100%;
-      margin: 0;
-      z-index: 2;
-      box-shadow: 0 1rem 1rem var(--shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    padding: 0 0.8rem;
+    height: 4.6rem;
+    background: var(--white-color);
+    width: 100%;
+    margin: 0;
+    z-index: 2;
+    box-shadow: 0 1rem 1rem var(--shadow);
   }
 
   .right .top .theme-toggler {
-      width: 4.4rem;
-      position: absolute;
-      left: 66%;
+    width: 4.4rem;
+    position: absolute;
+    left: 66%;
   }
 
   .right .profile .info {
-      display: none;
+    display: none;
   }
 
   .right .top button {
-      display: inline-block;
-      background: transparent;
-      cursor: pointer;
-      color: var(--dark-color);
-      position: absolute;
-      left: 1rem;
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+    color: var(--dark-color);
+    position: absolute;
+    left: 1rem;
   }
 
   .right .top button span {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 768px) {
   main .insights {
-      grid-template-columns: 1fr;
-      gap: 0;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   main .recent-orders {
-      width: 100%;
-      position: relative;
-      margin: 3rem 0 0 0;
+    width: 100%;
+    position: relative;
+    margin: 3rem 0 0 0;
   }
 
   main .recent-orders table {
-      width: 100%;
-      margin: 0;
+    width: 100%;
+    margin: 0;
   }
 }

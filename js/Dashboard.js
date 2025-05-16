@@ -1,12 +1,4 @@
-// Sample product data
-const products = [
-    { name: 'TV', price: 887, count: 123 },
-    { name: 'Laptop', price: 1267, count: 23 },
-    { name: 'Phone', price: 267, count: 21 },
-    { name: 'Wash Machine', price: 236, count: 4 },
-    { name: 'Keyboard', price: 12, count: 3556 }
-  ];
-  
+
 
   function populateProductsTable() {
     const tableBody = document.querySelector('#productsTable tbody');

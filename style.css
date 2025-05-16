@@ -161,8 +161,8 @@ body {
 /* Navigation Styles */
 nav {
   display: flex;
-  justify-content: center;
-  padding: 0.75rem 2.5rem;
+  justify-content:space-evenly ;
+  padding: 1% 2.5rem;
   align-items: center;
   background: linear-gradient(135deg, #a31621, #570000);
   position: sticky;
@@ -173,25 +173,7 @@ nav {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   font-family: "Poppins", sans-serif; /* Modern font */
 }
-.cut {
-  display: flex;
-  align-items: center;
-  height: 24px;
-  margin: 0 0.5rem;
-}
 
-.cut p {
-  margin: 0;
-  padding: 0;
-}
-
-.cut strong {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 1.2rem;
-  font-weight: 300;
-  display: inline-block;
-  letter-spacing: -2px;
-}
 
 .logo {
   font-size: 1.5rem;
@@ -216,7 +198,7 @@ nav {
   color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.3s ;
   padding: 0.6rem 0;
   font-size: 0.95rem;
   letter-spacing: 0.6px;
@@ -229,7 +211,7 @@ nav {
   height: 2px;
   bottom: 0;
   left: 0;
-  background: #ffd700; /* Gold accent */
+  background: #00000000; /* Gold accent */
   transition: width 0.3s ease, background 0.3s ease;
   transform-origin: left;
 }
@@ -240,7 +222,7 @@ nav {
 
 .nav-links a:hover::before {
   width: 100%;
-  background: linear-gradient(90deg, #ffd700, #ffa500); /* Gradient accent */
+  background: linear-gradient(90deg, #000000, #000000); /* Gradient accent */
 }
 
 .nav-links a.active {
@@ -337,7 +319,7 @@ nav {
     top: 70px;
     left: -100%;
     width: 80%;
-    height: calc(100vh - 70px);
+   
     background: linear-gradient(135deg, #8b1218, #570000);
     flex-direction: column;
     justify-content: flex-start;
@@ -371,11 +353,11 @@ nav {
 /* Hero Section */
 
 .hero-with-bg {
-  background-image: url("Images/tech2.jpg"); /* تأكد من اسم الصورة والمجلد */
+  background-image: url("Images/tech2.jpg");
   background-size: cover;
-  background-position: center bottom;
+  background-position: center;
   background-repeat: no-repeat;
-  height: 120vh; /* خليتها 90% زي ما انت كتبت في الكومنت */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -384,24 +366,26 @@ nav {
   padding: 2rem;
   position: relative;
   z-index: 1;
+  animation: fadeInHero 1s ease-in-out;
 }
 
 .hero-with-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* تعتيم خفيف */
+  background: rgba(0, 0, 0, 0.55); /* تعتيم محسن */
   z-index: 1;
 }
 
 .hero-with-bg h1 {
-  font-size: 4rem; /* خط كبير */
+  font-size: 4rem;
   font-weight: 800;
   color: white;
   position: relative;
   z-index: 2;
   text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
   margin-bottom: 1.5rem;
+  animation: slideDown 1s ease forwards;
 }
 
 .hero-with-bg .subtitle {
@@ -411,7 +395,60 @@ nav {
   position: relative;
   z-index: 2;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  margin-bottom: 2rem;
+  animation: fadeInText 1.2s ease forwards;
 }
+
+.hero-with-bg .btn {
+  padding: 0.8rem 2rem;
+  background-color: #ff5e57;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-with-bg .btn:hover {
+  background-color: #e94e49;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .hero-buttons button {
   padding: 0.9rem 1.8rem;
@@ -539,7 +576,7 @@ footer {
 }
 
 .card {
-  background-color: #efe8e8;
+  background-color: #ffffff;
   border-radius: 8px;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
@@ -549,11 +586,11 @@ footer {
 }
 
 .shadow {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(124, 1, 1, 0.1);
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(161, 9, 9, 0.2);
 }
 
 /* Product Image Container */
@@ -568,7 +605,7 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: scale-down;
-  transition: transform 0.3s ease;
+  transition: transform 0.70s ease;
 }
 
 .card:hover .product-image {
@@ -598,7 +635,7 @@ footer {
 .price {
   font-weight: bold;
   font-size: 18px;
-  color: #1a73e8;
+  color: #7287a3;
   margin-bottom: 16px;
 }
 
@@ -620,14 +657,14 @@ footer {
 /* Product Detail Page Styles */
 .product-detail-container {
   padding: 20px;
-  max-width: 1200px;
+  max-width: 1700px;
   margin: 0 auto;
 }
 
 .product-detail-card {
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -1273,7 +1310,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: flex-end;
   z-index: 1000;
